@@ -1,5 +1,7 @@
 # dhwani_ask_doc
 Welcome to AskDoc!
+AskDoc is a one stop shop for all doctor and patient communication!
+
 To pass DoctorLogin Authentication:
 Use:
 email: doctor1@gmail.com
