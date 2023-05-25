@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientReg">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="420dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/psiact" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="409dp"
+        android:layout_height="626dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Enter your Email ID:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/edittext"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="Email ID"
+                android:inputType="textEmailAddress"
+                android:paddingStart="20dp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Create your Password:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingStart="15dp" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Already have an account? "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="70dp"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Click here to Login!"
+                android:textColor="#0922FF"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/lato_black"
+                android:paddingTop="30dp"
+                android:text="Enter your details here:"
+                android:textColor="#4AD318"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Enter your Full Name:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextText2"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/edittext"
+
+                android:ems="10"
+                android:hint="Full Name"
+                android:inputType="text"
+                android:paddingStart="15dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Enter your Birthday"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextText6"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/edittext"
+
+                android:ems="10"
+                android:hint="dd/mm/yyyy"
+                android:inputType="text"
+                android:paddingStart="15dp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Enter your Medical Issue here:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextText7"
+                android:layout_width="352dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/edittext"
+
+                android:ems="10"
+                android:hint="Medical Issue"
+                android:inputType="text"
+                android:paddingStart="15dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Enter your Doctor's Doctor ID here:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextText8"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:hint="Doctor ID"
+                android:inputType="text"
+                android:paddingStart="15dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="303dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#7BEE33"
+                android:onClick="saveNotep"
+                android:text="Click here to Register"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="152dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="#7BEE33"
+                android:text="Sign up"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginStart="310dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.954"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.975"
+                app:srcCompat="@drawable/logo" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

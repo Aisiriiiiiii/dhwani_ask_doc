@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "456009830999",
+    "project_id": "ask-doc-d4b26",
+    "storage_bucket": "ask-doc-d4b26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456009830999:android:464b1308ad672500534912",
+        "android_client_info": {
+          "package_name": "com.example.d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456009830999-m4bi7rps0lls04dmflme7sbvbjip92v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL0xjThToWlCt7TRrtwVvKz95w124oWXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456009830999-m4bi7rps0lls04dmflme7sbvbjip92v4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
