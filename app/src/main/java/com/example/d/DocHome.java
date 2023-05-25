@@ -53,17 +53,17 @@ public class DocHome extends AppCompatActivity {
         nametw = findViewById(R.id.textView37);
         docidtw = findViewById(R.id.textView40);
         logout = findViewById(R.id.button10);
-        video = findViewById(R.id.imageButton9);
-        audio =findViewById(R.id.imageButton8);
-        drag = findViewById(R.id.imageButton7);
+        video = findViewById(R.id.video);
+        audio =findViewById(R.id.audio);
+        drag = findViewById(R.id.tools);
 
-        video = findViewById(R.id.imageButton9);
+        video = findViewById(R.id.video);
         video.setOnClickListener(v -> click());
 
-        audio = findViewById(R.id.imageButton8);
+        audio = findViewById(R.id.audio);
         audio.setOnClickListener(v -> click1());
 
-        drag = findViewById(R.id.imageButton7);
+        drag = findViewById(R.id.tools);
         drag.setOnClickListener(v -> click2());
 
         List<Item> items = new ArrayList<>();
@@ -97,6 +97,8 @@ public class DocHome extends AppCompatActivity {
                         // Retrieve doctor details from the document
                         String fn = documentSnapshot.getString(KEY_FULLNAME);
                         String did = documentSnapshot.getString(KEY_DOCTORID);
+
+
 
                         nametw.setText(fn);
                         docidtw.setText(did);

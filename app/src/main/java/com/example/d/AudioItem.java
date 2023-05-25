@@ -1,19 +1,20 @@
 package com.example.d;
 
 public class AudioItem {
-    private String title;
-    private String url;
+     String atitle;
+    String aurl;
 
     public AudioItem(String title, String url) {
-        this.title = title;
-        this.url = url;
+        this.atitle = title;
+        this.aurl = url;
     }
 
     public String getTitle() {
-        return title;
+
+        return atitle;
     }
 
     public String getUrl() {
-        return url;
+        return aurl;
     }
 }

@@ -48,9 +48,18 @@ public class PatientHome extends AppCompatActivity {
         logout = findViewById(R.id.button12);
         medissuetw = findViewById(R.id.textView29);
         pname = findViewById(R.id.textView35);
-        video = findViewById(R.id.imageButton9);
-        audio =findViewById(R.id.imageButton8);
-        drag = findViewById(R.id.imageButton7);
+        video = findViewById(R.id.video);
+        audio =findViewById(R.id.audio);
+        drag = findViewById(R.id.tools);
+
+        video = findViewById(R.id.video);
+        video.setOnClickListener(v -> click());
+
+        audio = findViewById(R.id.audio);
+        audio.setOnClickListener(v -> click1());
+
+        drag = findViewById(R.id.tools);
+        drag.setOnClickListener(v -> click2());
 
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -105,5 +114,20 @@ public class PatientHome extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
+
+    private void click2() {
+        Intent intent = new Intent(this, MatchTheFollowing.class);
+        startActivity(intent);
+    }
+
+    private void click1() {
+        Intent intent = new Intent(this, AudioActivity.class);
+        startActivity(intent);
+    }
+
+    private void click() {
+        Intent intent = new Intent(this, VideoActivity.class);
+        startActivity(intent);
     }
 }

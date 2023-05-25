@@ -12,34 +12,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MatchTheFollowing extends AppCompatActivity implements View.OnLongClickListener, View.OnDragListener {
-    ImageView wheelchairImage;
-    ImageView hearingAidImage;
-    ImageView prostheticLimbImage;
+    ImageView hearingaid, leg, prosleg, walk, crutch, ear;
 
-    TextView legsTarget;
-    TextView earsTarget;
-    TextView limbTarget;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_the_following);
 
-        wheelchairImage = findViewById(R.id.imageView15);
-        hearingAidImage = findViewById(R.id.imageView);
-        prostheticLimbImage = findViewById(R.id.imageView14);
+        hearingaid= findViewById(R.id.hearingaid);
+        prosleg = findViewById(R.id.imageView14);
+        crutch = findViewById(R.id.imageView15);
+        ear = findViewById(R.id.imageView16);
+        leg = findViewById(R.id.imageView19);
+        walk = findViewById(R.id.imageView20);
 
-        legsTarget = findViewById(R.id.textView46);
-        earsTarget = findViewById(R.id.textView47);
-        limbTarget = findViewById(R.id.textView48);
+        hearingaid.setOnLongClickListener(this);
+        prosleg.setOnLongClickListener(this);
+        crutch.setOnLongClickListener(this);
 
-        wheelchairImage.setOnLongClickListener(this);
-        hearingAidImage.setOnLongClickListener(this);
-        prostheticLimbImage.setOnLongClickListener(this);
-
-        legsTarget.setOnDragListener(this);
-        earsTarget.setOnDragListener(this);
-        limbTarget.setOnDragListener(this);
+        ear.setOnDragListener(this);
+        leg.setOnDragListener(this);
+        walk.setOnDragListener(this);
     }
 
     @Override
@@ -77,13 +72,13 @@ public class MatchTheFollowing extends AppCompatActivity implements View.OnLongC
                 TextView targetView = (TextView) v;
 
                 // Check if the match is correct
-                if (draggedView.getId() == wheelchairImage.getId() && targetView.getId() == legsTarget.getId()) {
+                if (draggedView.getId() == hearingaid.getId() && targetView.getId() == ear.getId()) {
                     // Correct match for wheelchair and legs
                     Toast.makeText(this, "Correct match!", Toast.LENGTH_SHORT).show();
-                } else if (draggedView.getId() == hearingAidImage.getId() && targetView.getId() == earsTarget.getId()) {
+                } else if (draggedView.getId() == crutch.getId() && targetView.getId() == walk.getId()) {
                     // Correct match for hearing aid and ears
                     Toast.makeText(this, "Correct match!", Toast.LENGTH_SHORT).show();
-                } else if (draggedView.getId() == prostheticLimbImage.getId() && targetView.getId() == limbTarget.getId()) {
+                } else if (draggedView.getId() == prosleg.getId() && targetView.getId() == leg.getId()) {
                     // Correct match for prosthetic limb and limb
                     Toast.makeText(this, "Correct match!", Toast.LENGTH_SHORT).show();
                 } else {

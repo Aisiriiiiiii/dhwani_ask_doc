@@ -1,20 +1,22 @@
 package com.example.d;
 
-import android.content.DialogInterface;
-import android.media.AudioAttributes;
-import android.media.AudioFocusRequest;
-import android.media.AudioManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -24,8 +26,6 @@ import java.util.List;
 public class AudioActivity extends AppCompatActivity implements AudioAdapter.OnAudioItemClickListener {
     private RecyclerView recyclerView;
     private AudioAdapter audioAdapter;
-    private List<AudioItem> audioItems;
-    private PlayerManager playerManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,47 +34,62 @@ public class AudioActivity extends AppCompatActivity implements AudioAdapter.OnA
 
         recyclerView = findViewById(R.id.audioRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        audioItems = new ArrayList<>();
-        audioAdapter = new AudioAdapter(audioItems, this);
-        recyclerView.setAdapter(audioAdapter);
 
-        playerManager = new PlayerManager(this);
-        loadAudioItems();
+        getAudioItemsFromFirestore();
     }
 
-    private void loadAudioItems() {
+    private void getAudioItemsFromFirestore() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Query audioQuery = db.collection("Audios");
-        audioQuery.get().addOnSuccessListener(queryDocumentSnapshots -> {
-            audioItems.clear(); // Clear the existing list
+        db.collection("Audio")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    List<AudioItem> audioItems = new ArrayList<>();
+                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                        String title = documentSnapshot.getString("title");
+                        String url = documentSnapshot.getString("url");
 
-            for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                String title = documentSnapshot.getString("title");
-                String url = documentSnapshot.getString("url");
+                        AudioItem audioItem = new AudioItem(title, url);
+                        audioItems.add(audioItem);
+                    }
 
-                AudioItem audioItem = new AudioItem(title, url);
-                audioItems.add(audioItem);
-            }
-            audioAdapter.notifyDataSetChanged(); // Notify the adapter of data change
-        }).addOnFailureListener(e -> {
-            Toast.makeText(this, "Failed to load audio items.", Toast.LENGTH_SHORT).show();
-        });
+                    audioAdapter = new AudioAdapter(audioItems, AudioActivity.this);
+                    recyclerView.setAdapter(audioAdapter);
+                });
     }
 
     @Override
     public void onAudioItemClick(AudioItem audioItem) {
-        playerManager.playAudio(audioItem);
+        String title = audioItem.getTitle();
+        Toast.makeText(this, "Clicked on audio: " + title, Toast.LENGTH_SHORT).show();
+        playAudio(audioItem);
+
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        playerManager.stopAudioPlayback();
+    private void playAudio(AudioItem audioItem) {
+        TextView titleTextView = findViewById(R.id.audioTitle);
+        titleTextView.setText(audioItem.getTitle());
+
+        
+        SimpleExoPlayer exoPlayer = new SimpleExoPlayer.Builder(this).build();
+
+       
+        PlayerView playerView = findViewById(R.id.exoplayer);
+        playerView.setPlayer(exoPlayer);
+
+        
+        Uri audioUri = Uri.parse(audioItem.getUrl());
+        MediaSource mediaSource = buildMediaSource(audioUri);
+
+        // Prepare the player with the media source
+        exoPlayer.setMediaSource(mediaSource);
+        exoPlayer.prepare();
+        exoPlayer.setPlayWhenReady(true);
+
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        playerManager.releasePlayer();
+    private MediaSource buildMediaSource(Uri audioUri) {
+        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, "Your Application Name");
+        return new ProgressiveMediaSource.Factory(dataSourceFactory)
+                .createMediaSource(MediaItem.fromUri(audioUri));
     }
 }

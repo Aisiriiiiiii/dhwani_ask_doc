@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,7 +37,7 @@ public class DoctorRegistration extends AppCompatActivity {
     private static final String KEY_BIRTHDAY = "birthday";
     private static final String KEY_HOSPITALNAME = "hospital/clinic name";
 
-
+    TextView login;
     EditText email, password, fullname, doctorid, bday, hospname;
     Button signup;
     FirebaseAuth mAuth;
@@ -56,6 +57,10 @@ public class DoctorRegistration extends AppCompatActivity {
         doctorid = findViewById(R.id.editTextText20);
         bday = findViewById(R.id.editTextText22);
         hospname = findViewById(R.id.editTextText21);
+        login = findViewById(R.id.textView56);
+
+
+        login.setOnClickListener(v -> click());
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +97,12 @@ public class DoctorRegistration extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void click() {
+        Intent intent = new Intent(this, DoctorLogin.class);
+        startActivity(intent);
+
     }
 
     public void saveNote(View v) {

@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class DoctorLogin extends AppCompatActivity {
+    TextView reg;
     EditText email, password;
     Button signup;
     FirebaseAuth mAuth;
@@ -42,8 +44,9 @@ public class DoctorLogin extends AppCompatActivity {
         email = findViewById(R.id.editTextTextEmailAddress3);
         password = findViewById(R.id.editTextTextPassword7);
         signup = findViewById(R.id.button6);
+        reg = findViewById(R.id.textView53);
 
-
+        reg.setOnClickListener(v -> click());
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +80,11 @@ public class DoctorLogin extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void click() {
+        Intent intent = new Intent(this, DoctorRegistration.class);
+        startActivity(intent);
     }
 
 }

@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <TextView
         android:id="@+id/textView38"
@@ -61,10 +61,10 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView33"
@@ -82,52 +82,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#DAE7FD"
-        app:itemTextColor="#B5B8EC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <ImageButton
-            android:id="@+id/imageButton9"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="64dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:background="@null"
-            android:scaleType="fitXY"
-            android:src="@drawable/youtobe" />
-
-        <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="54dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="10dp"
-            android:background="@null"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/audio" />
-
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="53dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:background="@null"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/tools" />
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
     <TextView
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
@@ -137,20 +91,20 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView37"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/lato_black"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
@@ -183,6 +137,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.409" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#DAE7FD"
+        app:itemTextColor="#B5B8EC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/video"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="64dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/youtubepat" />
+
+        <ImageButton
+            android:id="@+id/audio"
+            android:layout_width="54dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/volpat" />
+
+        <ImageButton
+            android:id="@+id/tools"
+            android:layout_width="53dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/toolspat" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

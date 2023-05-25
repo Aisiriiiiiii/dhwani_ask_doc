@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -35,7 +34,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
     public VideoViewHolder(@NonNull View itemView) {
         super(itemView);
         mContext = itemView.getContext();
-        mExoPlayerView = itemView.findViewById(R.id.exoplayer_view);
+        mExoPlayerView = itemView.findViewById(R.id.exoplayer);
         mTitleTextView = itemView.findViewById(R.id.videotitle);
         mFullScreenButton = itemView.findViewById(R.id.fullscreen_button);
     }

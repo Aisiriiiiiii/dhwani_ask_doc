@@ -19,33 +19,36 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/videotitle"
-                android:textSize="15dp"
-                android:fontFamily="@font/lato_black"
-                android:textColor="@color/white"
-                android:background="@color/black"
-                android:text="Title"/>
 
-            <ImageButton
-                android:id="@+id/fullscreen_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|end"
-                android:layout_margin="16dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="Full Screen Button"
-                android:src="?attr/actionModeSelectAllDrawable" />
-                
-                <com.google.android.exoplayer2.ui.PlayerView
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:id="@+id/exoplayer_view"
-                    android:background="@color/black"
-                    app:resize_mode="fill"
-                    android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/videotitle"
+                android:layout_width="352dp"
+                android:layout_height="56dp"
+                android:background="@drawable/edittext"
+                android:fontFamily="@font/lato"
+                android:padding="10dp"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/exoplayer"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:background="@color/black"
+                app:resize_mode="fill" />
         </LinearLayout>
     </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/fullscreen_button"
+        android:layout_width="54dp"
+        android:layout_height="55dp"
+        android:layout_gravity="top|end"
+
+        android:background="@null"
+        android:contentDescription="Full Screen Button"
+        android:scaleType="fitXY"
+        android:src="@drawable/fs" />
 </com.google.android.material.card.MaterialCardView>
